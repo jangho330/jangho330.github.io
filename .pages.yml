@@ -1,0 +1,37 @@
+# Pages CMS 설정 (https://app.pagescms.org). 이 파일이 저장소 루트에 있으면
+# GitHub 계정으로 로그인해 글을 화면에서 작성할 수 있습니다.
+
+media:
+  input: images      # 업로드한 사진이 저장되는 폴더
+  output: /images    # 글 본문에 삽입되는 경로
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{fields.title}.md"
+    view:
+      fields: [title, date, tags]
+      sort: [date]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: excerpt
+        label: Summary (shown in the post list)
+        type: text
+      - name: image
+        label: Thumbnail (optional — first image in the post is used if empty)
+        type: image
+      - name: body
+        label: Body
+        type: rich-text
