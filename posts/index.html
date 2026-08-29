@@ -5,7 +5,7 @@ permalink: /posts/
 ---
 <section class="page">
   <div class="sec-head"><h1>Posts</h1><span class="sec-note">{{ site.posts | size }} posts</span></div>
-  <p class="prose">Notes, images, and videos on language learning, teaching, and AI — shared in whatever form fits.</p>
+  <p class="prose">Notes, images, and videos on language learning, teaching, AI, music, and films — shared in whatever form fits.</p>
 
   {% capture tag_names %}{% for tag in site.tags %}{{ tag[0] }}|{% endfor %}{% endcapture %}
   {% assign tag_names = tag_names | split: "|" | sort %}
