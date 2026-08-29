@@ -31,7 +31,7 @@ img{max-width:100%;height:auto}
 
 /* ── Hero ────────────────────────────────────────────────────── */
 .hero{padding:72px 0 56px;display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:end;border-bottom:2px solid var(--blue)}
-.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin:0 0 14px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin:0 0 17px}
 h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,6vw,64px);line-height:1.02;letter-spacing:-.015em;margin:0 0 20px}
 .lede{font-family:var(--display);font-size:22px;line-height:1.4;color:var(--ink-2);margin:0 0 26px;max-width:46ch}
 .lede em{font-style:italic;color:var(--ink)}
