@@ -61,7 +61,7 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,6vw,64px);lin
 section{padding:88px 0 0}
 .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:28px}
 h2{font-family:var(--display);font-weight:400;font-size:34px;letter-spacing:-.01em;margin:0}
-.sec-note{font-size:14px;color:var(--slate)}
+.sec-note{font-size:16px;color:var(--slate)}
 .prose{font-size:17px;max-width:66ch}
 .prose p{margin:0 0 16px}
 .label,.aside h3,.courses h3,footer h3{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);margin:0 0 10px;font-weight:500}
