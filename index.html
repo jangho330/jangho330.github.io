@@ -86,9 +86,9 @@ title: Jang Ho Lee — Professor of English Education, Chung-Ang University
 <section id="publications">
   <div class="sec-head"><h2>Publications</h2><span class="sec-note">Peer-reviewed journal articles · {{ site.data.publications | size }}</span></div>
   <div class="tools" role="group" aria-label="Filter publications by year">
-    <button class="chip" type="button" aria-pressed="true" data-yr="all">All</button>
+    <button class="chip" type="button" aria-pressed="false" data-yr="all">All</button>
     {% assign years = site.data.publications | map: "year" | uniq %}
-    {% for y in years %}{% if y >= 2022 %}<button class="chip" type="button" aria-pressed="false" data-yr="{{ y }}">{{ y }}</button>{% endif %}{% endfor %}
+    {% for y in years %}{% if y >= 2022 %}<button class="chip" type="button" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" data-yr="{{ y }}">{{ y }}</button>{% endif %}{% endfor %}
     <button class="chip" type="button" aria-pressed="false" data-yr="earlier">2011–2021</button>
     <input class="search" type="search" placeholder="Search title, author, journal…" aria-label="Search publications">
   </div>
