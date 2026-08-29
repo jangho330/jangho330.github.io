@@ -70,6 +70,7 @@ https://www.youtube.com/watch?v=XXXXXXXXXXX
 | 학력·경력·편집위원 | `_data/cv.yml` |
 | 연구 분야 카드 | `_data/research.yml` |
 | 연구과제, 수상 | `_data/projects.yml`, `_data/awards.yml` |
+| 초청 강연 | `_data/talks.yml` |
 | 강의 과목 | `_data/teaching.yml` |
 | 프로필 사진 | `assets/img/profile.jpg` (같은 이름으로 덮어쓰기, 세로가 긴 사진 권장) |
 | 색상·글꼴 | `assets/css/style.css` 맨 위 `:root` 부분 (`--blue: #004C97`은 Pantone 2945C) |

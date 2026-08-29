@@ -33,7 +33,7 @@ title: Jang Ho Lee — Professor of English Education, Chung-Ang University
   <div class="two">
     <div class="prose">
       <p>I am Professor of English Education at Chung-Ang University in Seoul, where I have served as Chair of the Department of English Education (2023–2025) and Director of the Digital Education Support Center (2024–2026). My research examines how technology — most recently generative AI — is reshaping second language teaching and learning, alongside long-standing interests in English-medium instruction and the language instructors use in English classrooms.</p>
-      <p>Much of my work synthesizes the field's evidence through meta-analysis, with recent articles in <em>Review of Educational Research</em>, <em>Educational Research Review</em>, <em>Applied Linguistics</em>, and <em>Language Learning &amp; Technology</em>. Current projects build and evaluate L2 chatbots, explore no-code approaches that let teachers create their own GenAI tools, and develop <em>GenAI-mediated activity theory</em> as a framework for understanding teachers' changing practice.</p>
+      <p>Much of my work synthesizes the field's evidence through meta-analysis and meta-analytic structural equation modelling, with recent articles in <em>Review of Educational Research</em>, <em>Educational Research Review</em>, <em>Applied Linguistics</em>, and <em>Language Learning &amp; Technology</em>. Current projects build and evaluate L2 chatbots, explore no-code approaches that let teachers create their own GenAI tools, and develop <em>GenAI-mediated activity theory</em> as a framework for understanding teachers' changing practice.</p>
       <p>I received my D.Phil. in Applied Linguistics and Second Language Acquisition from the University of Oxford, supervised by Ernesto Macaro, and an M.A. in Applied Linguistics from Teachers College, Columbia University. I have been a Visiting Professor at The Hong Kong Polytechnic University (2025–2026), serve on the editorial boards of <em>IRAL</em> and <em>Language Learning &amp; Technology</em>, and was named to the Stanford–Elsevier list of the World's Top 2% Scientists (2025 single-year list, Languages &amp; Linguistics).</p>
       <p>Outside my life as an applied linguist, I enjoy listening to progressive metal (e.g., Dream Theater, Opeth, and Porcupine Tree), melodic death metal (e.g., Dark Tranquillity, In Flames, and Insomnium), and grunge (e.g., Alice in Chains, Pearl Jam, and Soundgarden). I am also a fan of thriller and horror films and TV series, especially Japanese horror and cult horror.</p>
     </div>
@@ -104,6 +104,21 @@ title: Jang Ho Lee — Professor of English Education, Chung-Ang University
     {% endfor %}
   </ul>
   <p class="more" id="pub-empty" hidden>No publications match your search.</p>
+</section>
+
+<section id="talks">
+  <div class="sec-head"><h2>Invited talks</h2><span class="sec-note">Selected talks since 2023</span></div>
+  <ul class="pubs">
+    {% for t in site.data.talks %}
+    <li class="pub">
+      <span class="yr">{{ t.year }}</span>
+      <div>
+        <p class="t">{{ t.title }}</p>
+        <p class="m">{{ t.event }} · {{ t.place }} · {{ t.date }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 
 <section id="teaching">
