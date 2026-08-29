@@ -5,7 +5,9 @@
   var q = document.querySelector('#publications .search');
   var empty = document.getElementById('pub-empty');
   if (!chips.length || !pubs.length) return;
-  var yr = 'all';
+  // Start on whichever chip is pre-selected in the HTML (the most recent year)
+  var pressed = document.querySelector('#publications .chip[aria-pressed="true"]');
+  var yr = pressed ? pressed.getAttribute('data-yr') : 'all';
   function apply() {
     var s = q ? q.value.trim().toLowerCase() : '';
     var shown = 0;
@@ -27,6 +29,7 @@
     });
   });
   if (q) q.addEventListener('input', apply);
+  apply();
 })();
 
 /* Posts index: tag filter (also reads ?tag= from the URL) */
