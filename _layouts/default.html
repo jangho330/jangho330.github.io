@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% feed_meta %}
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="{{ '/' | relative_url }}#research">Research</a>
+      <a href="{{ '/' | relative_url }}#publications">Publications</a>
+      <a href="{{ '/' | relative_url }}#teaching">Teaching</a>
+      <a href="{{ '/posts/' | relative_url }}"{% if page.url contains '/posts/' %} aria-current="page"{% endif %}>Posts</a>
+      <a href="{{ '/' | relative_url }}#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+{{ content }}
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h3>Contact</h3>
+      <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+      <p>{{ site.author.department }}<br>{{ site.author.university }}<br>{{ site.author.address }}</p>
+    </div>
+    <div>
+      <h3>Profiles</h3>
+      {% if site.author.orcid != "" %}<p><a href="{{ site.author.orcid }}" rel="me noopener" target="_blank">ORCID</a></p>{% endif %}
+      {% if site.author.scholar != "" %}<p><a href="{{ site.author.scholar }}" rel="me noopener" target="_blank">Google Scholar</a></p>{% endif %}
+      {% if site.author.researchgate != "" %}<p><a href="{{ site.author.researchgate }}" rel="me noopener" target="_blank">ResearchGate</a></p>{% endif %}
+      <p><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></p>
+    </div>
+    <div>
+      <h3>For prospective students</h3>
+      <p>I supervise graduate research on AI-mediated language learning, English-medium instruction, classroom language use, and research synthesis. Email me with a short description of your interests.</p>
+    </div>
+    <p class="fine">© {{ site.time | date: "%Y" }} {{ site.author.name }} · Built with Jekyll, hosted on GitHub Pages</p>
+  </div>
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

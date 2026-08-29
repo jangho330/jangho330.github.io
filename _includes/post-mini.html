@@ -1,0 +1,24 @@
+{%- assign p = include.post -%}
+{%- assign thumb = "" -%}
+{%- if p.image -%}
+  {%- assign thumb = p.image | relative_url -%}
+{%- elsif p.content contains "<img" -%}
+  {%- assign after = p.content | split: "<img" -%}
+  {%- assign seg = after[1] | split: 'src="' -%}
+  {%- assign thumb = seg[1] | split: '"' | first -%}
+{%- endif -%}
+{%- assign has_video = false -%}
+{%- if p.content contains "youtube.com/" or p.content contains "youtu.be/" -%}{%- assign has_video = true -%}{%- endif -%}
+<a class="mini" href="{{ p.url | relative_url }}">
+  {%- if thumb != "" -%}
+  <span class="mini-thumb"><img src="{{ thumb }}" alt="" loading="lazy"></span>
+  {%- elsif has_video -%}
+  <span class="mini-thumb vid">▶</span>
+  {%- else -%}
+  <span class="mini-thumb txt">“ ”</span>
+  {%- endif -%}
+  <span class="mini-body">
+    <span class="tags">{{ p.date | date: "%b %-d, %Y" }}{% for t in p.tags limit: 2 %} · {{ t }}{% endfor %}</span>
+    <span class="mini-title">{{ p.title }}</span>
+  </span>
+</a>

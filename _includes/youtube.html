@@ -1,0 +1,5 @@
+{%- comment -%}
+사용법: {% include youtube.html id="dQw4w9WgXcQ" %}
+(글 본문에 유튜브 URL을 한 줄로 붙여 넣어도 자동으로 삽입되므로, 이 include는 선택 사항입니다.)
+{%- endcomment -%}
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ include.id }}" title="{{ include.title | default: 'YouTube video' }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>

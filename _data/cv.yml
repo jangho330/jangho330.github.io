@@ -1,0 +1,28 @@
+# About 섹션 오른쪽에 표시되는 항목들. 자유롭게 추가·수정하세요.
+education:
+  - when: "D.Phil."
+    what: "University of Oxford, 2010 — Applied Linguistics and Second Language Acquisition"
+  - when: "M.A."
+    what: "Teachers College, Columbia University, 2007 — Applied Linguistics"
+  - when: "B.A."
+    what: "Korea University, 2005 — English Education (magna cum laude)"
+
+positions:
+  - when: "2022–"
+    what: "Professor, Department of English Education, Chung-Ang University"
+  - when: "2024–26"
+    what: "Director, Digital Education Support Center, Chung-Ang University"
+  - when: "2023–25"
+    what: "Chair, Department of English Education, Chung-Ang University"
+  - when: "2018–22"
+    what: "Associate Professor, Chung-Ang University"
+  - when: "2014–18"
+    what: "Assistant Professor, Chung-Ang University"
+  - when: "2012–14"
+    what: "Assistant Professor, Korea Military Academy"
+
+service:
+  - when: "Editorial board"
+    what: "International Review of Applied Linguistics in Language Teaching (IRAL); Language Learning & Technology"
+  - when: "Reviewer"
+    what: "Computer Assisted Language Learning, Language Teaching Research, System, ReCALL, Journal of Multilingual and Multicultural Development, and others"

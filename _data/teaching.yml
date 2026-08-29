@@ -1,0 +1,11 @@
+# Teaching 섹션. 각 그룹 아래에 과목을 추가하세요. note는 선택 사항입니다.
+- group: "Undergraduate"
+  courses:
+    - name: "Seminars in English Linguistics"
+    - name: "English Syntax and Semantics"
+    - name: "Teaching English to Young Learners"
+- group: "Graduate"
+  courses:
+    - name: "Quantitative Research Methods in English Education"
+    - name: "Current Trends in English Education Research"
+    - name: "Studies in Applied Linguistics"

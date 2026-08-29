@@ -1,0 +1,119 @@
+---
+layout: default
+title: Jang Ho Lee — Professor of English Education, Chung-Ang University
+---
+<section class="hero">
+  <div>
+    <p class="eyebrow">{{ site.author.title }} · {{ site.author.department | split: "," | first }} · {{ site.author.university }}</p>
+    <h1>{{ site.author.name }}</h1>
+    <p class="lede">Applied linguist studying how people learn languages <em>with</em> — and increasingly <em>from</em> — machines, and a longtime fan of Porcupine Tree, Dream Theater, Opeth, and Alice in Chains.</p>
+    <div class="links">
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      {% if site.author.orcid != "" %}<a href="{{ site.author.orcid }}" target="_blank" rel="me noopener">ORCID</a>{% endif %}
+      {% if site.author.scholar != "" %}<a href="{{ site.author.scholar }}" target="_blank" rel="me noopener">Google Scholar</a>{% endif %}
+      <a href="#publications">Publications</a>
+    </div>
+  </div>
+  <div class="portrait">
+    <img src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Portrait of {{ site.author.name }}" width="880" height="1100">
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="latest" id="posts">
+  <div class="latest-head"><h2>Latest posts</h2><a class="sec-note" href="{{ '/posts/' | relative_url }}">All posts →</a></div>
+  <div class="minis">
+    {% for post in site.posts limit: 3 %}{% include post-mini.html post=post %}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section id="about">
+  <div class="sec-head"><h2>About</h2><span class="sec-note">Updated {{ site.updated }}</span></div>
+  <div class="two">
+    <div class="prose">
+      <p>I am Professor of English Education at Chung-Ang University in Seoul, where I have served as Chair of the Department of English Education (2023–2025) and Director of the Digital Education Support Center (2024–2026). My research examines how technology — most recently generative AI — is reshaping second language teaching and learning, alongside long-standing interests in English-medium instruction and the language instructors use in English classrooms.</p>
+      <p>Much of my work synthesizes the field's evidence through meta-analysis and meta-analytic structural equation modelling, with recent articles in <em>Review of Educational Research</em>, <em>Educational Research Review</em>, <em>Applied Linguistics</em>, and <em>Language Learning &amp; Technology</em>. Current projects build and evaluate L2 chatbots, explore no-code approaches that let teachers create their own GenAI tools, and develop <em>GenAI-mediated activity theory</em> as a framework for understanding teachers' changing practice.</p>
+      <p>I received my D.Phil. in Applied Linguistics and Second Language Acquisition from the University of Oxford, supervised by Ernesto Macaro, and an M.A. in Applied Linguistics from Teachers College, Columbia University. I have been a Visiting Professor at The Hong Kong Polytechnic University (2025–2026), serve on the editorial boards of <em>IRAL</em> and <em>Language Learning &amp; Technology</em>, and was named to the Stanford–Elsevier list of the World's Top 2% Scientists (2025 single-year list, Languages &amp; Linguistics).</p>
+      <p>Outside my life as an applied linguist, I enjoy listening to progressive metal (e.g., Dream Theater, Opeth, and Porcupine Tree), melodic death metal (e.g., Dark Tranquillity, In Flames, and Insomnium), and grunge (e.g., Alice in Chains, Pearl Jam, and Soundgarden). I am also a fan of thriller and horror films and TV series, especially Japanese horror and cult horror.</p>
+    </div>
+    <aside class="aside">
+      <h3>Education</h3>
+      <ul>{% for e in site.data.cv.education %}<li><span>{{ e.when }}</span><span>{{ e.what }}</span></li>{% endfor %}</ul>
+      <h3>Positions</h3>
+      <ul>{% for e in site.data.cv.positions %}<li><span>{{ e.when }}</span><span>{{ e.what }}</span></li>{% endfor %}</ul>
+      <h3>Service</h3>
+      <ul>{% for e in site.data.cv.service %}<li><span>{{ e.when }}</span><span>{{ e.what }}</span></li>{% endfor %}</ul>
+    </aside>
+  </div>
+</section>
+
+<section id="research">
+  <div class="sec-head"><h2>Research</h2><span class="sec-note">{{ site.data.research | size }} lines of work</span></div>
+  <div class="themes">
+    {% for r in site.data.research %}
+    <article class="theme">
+      <h3>{{ r.title }}</h3>
+      <p>{{ r.text }}</p>
+      <div class="meta">{{ r.meta }}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="grants">
+  <div class="sec-head"><h2>Funded projects &amp; awards</h2></div>
+  <div class="two">
+    <div>
+      <h3 class="label">Funded research projects</h3>
+      <ul class="plain">
+        {% for g in site.data.projects %}
+        <li class="grant">
+          <p class="t">{{ g.title }}</p>
+          <p class="m">{{ g.role }} · {{ g.funder }}{% if g.amount %} · {{ g.amount }}{% endif %}</p>
+          <p class="m">{{ g.period }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <aside class="aside">
+      <h3>Honors &amp; awards</h3>
+      <ul>{% for a in site.data.awards %}<li><span>{{ a.when }}</span><span>{{ a.what }}</span></li>{% endfor %}</ul>
+    </aside>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="sec-head"><h2>Publications</h2><span class="sec-note">Peer-reviewed journal articles · {{ site.data.publications | size }}</span></div>
+  <div class="tools" role="group" aria-label="Filter publications by year">
+    <button class="chip" type="button" aria-pressed="true" data-yr="all">All</button>
+    {% assign years = site.data.publications | map: "year" | uniq %}
+    {% for y in years %}{% if y >= 2022 %}<button class="chip" type="button" aria-pressed="false" data-yr="{{ y }}">{{ y }}</button>{% endif %}{% endfor %}
+    <button class="chip" type="button" aria-pressed="false" data-yr="earlier">2011–2021</button>
+    <input class="search" type="search" placeholder="Search title, author, journal…" aria-label="Search publications">
+  </div>
+  <ul class="pubs" id="pub-list">
+    {% for p in site.data.publications %}
+    <li class="pub" data-yr="{% if p.year >= 2022 %}{{ p.year }}{% else %}earlier{% endif %}">
+      <span class="yr">{{ p.year }}</span>
+      <div>
+        <p class="t">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+        <p class="m">{{ p.authors | replace: "Lee, J. H.", "<b>Lee, J. H.</b>" }} · <i>{{ p.journal }}</i>{% if p.volume %}, {{ p.volume }}{% if p.issue %}({{ p.issue }}){% endif %}, {{ p.pages }}{% else %} · {{ p.status }}{% endif %}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="more" id="pub-empty" hidden>No publications match your search.</p>
+</section>
+
+<section id="teaching">
+  <div class="sec-head"><h2>Teaching</h2><span class="sec-note">Courses at {{ site.author.university }}</span></div>
+  <div class="courses">
+    {% for g in site.data.teaching %}
+    <div>
+      <h3>{{ g.group }}</h3>
+      <ul>{% for c in g.courses %}<li>{{ c.name }}{% if c.note %}<small>{{ c.note }}</small>{% endif %}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,27 @@
+{%- assign p = include.post -%}
+{%- assign thumb = "" -%}
+{%- if p.image -%}
+  {%- assign thumb = p.image | relative_url -%}
+{%- elsif p.content contains "<img" -%}
+  {%- assign after = p.content | split: "<img" -%}
+  {%- assign seg = after[1] | split: 'src="' -%}
+  {%- assign thumb = seg[1] | split: '"' | first -%}
+{%- endif -%}
+{%- assign has_video = false -%}
+{%- if p.content contains "youtube.com/" or p.content contains "youtu.be/" -%}{%- assign has_video = true -%}{%- endif -%}
+<article class="card" data-tags="{{ p.tags | join: '|' }}">
+  <a class="thumb-link" href="{{ p.url | relative_url }}" aria-hidden="true" tabindex="-1">
+    {%- if thumb != "" -%}
+    <div class="thumb"><img src="{{ thumb }}" alt="" loading="lazy"></div>
+    {%- elsif has_video -%}
+    <div class="thumb vid"><span class="badge">VIDEO</span><span class="play">▶</span></div>
+    {%- else -%}
+    <div class="thumb txt">“ ”</div>
+    {%- endif -%}
+  </a>
+  <div class="body">
+    <p class="tags">{{ p.date | date: "%b %Y" }}{% for t in p.tags %} · {{ t }}{% endfor %}</p>
+    <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p>{{ p.excerpt | strip_html | strip | truncate: 120 }}</p>
+  </div>
+</article>

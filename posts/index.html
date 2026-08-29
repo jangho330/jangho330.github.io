@@ -1,0 +1,27 @@
+---
+layout: default
+title: Posts
+permalink: /posts/
+---
+<section class="page">
+  <div class="sec-head"><h1>Posts</h1><span class="sec-note">{{ site.posts | size }} posts</span></div>
+  <p class="prose">Notes, images, and videos on language learning, teaching, and AI — shared in whatever form fits.</p>
+
+  {% capture tag_names %}{% for tag in site.tags %}{{ tag[0] }}|{% endfor %}{% endcapture %}
+  {% assign tag_names = tag_names | split: "|" | sort %}
+  {% if tag_names.size > 0 %}
+  <div class="tools" role="group" aria-label="Filter posts by tag">
+    <button class="chip" type="button" aria-pressed="true" data-tag="all">All</button>
+    {% for name in tag_names %}<button class="chip" type="button" aria-pressed="false" data-tag="{{ name }}">{{ name }} <span class="count">{{ site.tags[name] | size }}</span></button>{% endfor %}
+  </div>
+  {% endif %}
+
+  {% if site.posts.size > 0 %}
+  <div class="cards" id="post-list">
+    {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+  <p class="more" id="post-empty" hidden>No posts with this tag yet.</p>
+  {% else %}
+  <p class="prose">No posts yet.</p>
+  {% endif %}
+</section>

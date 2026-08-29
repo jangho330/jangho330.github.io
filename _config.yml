@@ -1,0 +1,49 @@
+# ── Site settings ─────────────────────────────────────────────
+title: Jang Ho Lee
+description: >-
+  Professor of English Education at Chung-Ang University, Seoul. Research on
+  GenAI-mediated language teaching and learning, English-medium instruction,
+  and instructors' language use in English classrooms.
+
+# GitHub 사용자명(jangho330) 기준 주소
+url: "https://jangho330.github.io"
+baseurl: ""            # 저장소 이름이 USERNAME.github.io 이면 비워 둡니다.
+
+author:
+  name: Jang Ho Lee
+  title: Professor
+  department: Department of English Education, College of Education
+  university: Chung-Ang University
+  address: 84 Heukseok-ro, Dongjak-gu, Seoul 06974, Republic of Korea
+  email: jangholee@cau.ac.kr
+  orcid: "https://orcid.org/0000-0003-2767-3881"
+  scholar: ""          # Google Scholar 프로필 URL을 넣으면 링크가 자동으로 나타납니다.
+  researchgate: ""     # (선택) ResearchGate 프로필 URL
+
+updated: August 2026   # About 섹션 상단에 표시되는 갱신일
+
+# ── Build settings (수정 불필요) ──────────────────────────────
+lang: en
+timezone: Asia/Seoul
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+permalink: /posts/:year/:month/:day/:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+feed:
+  path: feed.xml
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

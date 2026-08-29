@@ -1,0 +1,7 @@
+{%- comment -%}
+사용법: {% include figure.html src="/images/photo.jpg" alt="설명" caption="캡션" %}
+{%- endcomment -%}
+<figure class="figure">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy">
+  {%- if include.caption -%}<figcaption>{{ include.caption }}</figcaption>{%- endif -%}
+</figure>
