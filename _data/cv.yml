@@ -25,4 +25,4 @@ service:
   - when: "Editorial board"
     what: "International Review of Applied Linguistics in Language Teaching (IRAL); Language Learning & Technology"
   - when: "Reviewer"
-    what: "Computer Assisted Language Learning, Language Teaching Research, System, ReCALL, Journal of Multilingual and Multicultural Development, and others"
+    what: "Computer Assisted Language Learning, Language Teaching Research, System, ELT Journal, ReCALL, Educational Research Review, Innovation in Language Learning and Teaching, Information Processing & Management, Journal of Multilingual and Multicultural Development, and others"
