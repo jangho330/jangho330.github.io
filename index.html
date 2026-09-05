@@ -19,14 +19,6 @@ title: Jang Ho Lee — Professor of English Education, Chung-Ang University
   </div>
 </section>
 
-{% if site.posts.size > 0 %}
-<section class="latest" id="posts">
-  <div class="latest-head"><h2>Latest posts</h2><a class="sec-note" href="{{ '/posts/' | relative_url }}">All posts →</a></div>
-  <div class="minis">
-    {% for post in site.posts limit: 3 %}{% include post-mini.html post=post %}{% endfor %}
-  </div>
-</section>
-{% endif %}
 
 <section id="about">
   <div class="sec-head"><h2>About</h2><span class="sec-note">Updated {{ site.updated }}</span></div>
