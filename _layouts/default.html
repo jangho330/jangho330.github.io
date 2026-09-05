@@ -24,7 +24,6 @@
       <a href="{{ '/' | relative_url }}#publications">Publications</a>
       <a href="{{ '/' | relative_url }}#talks">Talks</a>
       <a href="{{ '/' | relative_url }}#teaching">Teaching</a>
-      <a href="{{ '/posts/' | relative_url }}"{% if page.url contains '/posts/' %} aria-current="page"{% endif %}>Posts</a>
       <a href="{{ '/' | relative_url }}#contact">Contact</a>
     </nav>
   </div>
@@ -46,7 +45,6 @@
       {% if site.author.orcid != "" %}<p><a href="{{ site.author.orcid }}" rel="me noopener" target="_blank">ORCID</a></p>{% endif %}
       {% if site.author.scholar != "" %}<p><a href="{{ site.author.scholar }}" rel="me noopener" target="_blank">Google Scholar</a></p>{% endif %}
       {% if site.author.researchgate != "" %}<p><a href="{{ site.author.researchgate }}" rel="me noopener" target="_blank">ResearchGate</a></p>{% endif %}
-      <p><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></p>
     </div>
     <div>
       <h3>For prospective students</h3>
